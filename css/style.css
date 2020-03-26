@@ -1,0 +1,96 @@
+*,
+body,
+ul,
+li,
+a,
+button,
+.menu,
+.menu li {
+  text-decoration: none !important;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Baloo 2", cursive;
+}
+body,
+header,
+header .container,
+.menu {
+  display: flex;
+}
+body {
+  flex-direction: column;
+  background-color: #323232;
+}
+.menu {
+  align-items: center;
+}
+header {
+  justify-content: center;
+  padding: 10px 20px;
+  background-image: linear-gradient(to bottom, #84e, #92d);
+}
+header .container {
+  justify-content: space-between;
+}
+.menu {
+  justify-content: space-between;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+.menu li {
+  padding: 5px 8px;
+  cursor: pointer;
+}
+.menu li:nth-child(2) {
+  color: #fff;
+}
+.menu li:hover,
+.logo {
+  color: #fff;
+}
+.page_title {
+  padding: 20px;
+  font-size: 2em;
+  color: #84e;
+}
+.content {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 1050px;
+}
+.content .container {
+  display: flex;
+  padding: 15px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card {
+  width: 300px;
+  background-color: #84e;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+.card:hover {
+  background-image: linear-gradient(to bottom, #84e, #92d);
+}
+.card,
+.card_content {
+  display: flex;
+  flex-direction: column;
+}
+.card_content {
+  padding: 8px 12px;
+}
+.card_content h2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  margin-bottom: 3px;
+}
+.card img {
+  width: 100%;
+  display: flex;
+  border-radius: 10px 10px 0 0;
+}

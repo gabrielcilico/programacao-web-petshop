@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Serviços | Petshop</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+2:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/icon.png" type="image/png" sizes="16x16" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Petshop</h1>
+        <ul class="menu">
+          <li>Home</li>
+          <li>Serviços</li>
+          <li>Sobre nós</li>
+          <li>Contato</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="content">
+      <h3 class="page_title">Serviços</h3>
+    </div>
+
+    <div class="content">
+      <div class="container" id="servicos"></div>
+    </div>
+
+    <script type="text/javascript">
+      const descricaoPadrao =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.";
+      const estruturaHTML =
+        "<div class='card' onmouseover='#ACAO#'><img src='#FOTO#'/><div class='card_content'><h2>#NOME#</h2><p>#DESCRICAO#</p></div></div>";
+      const servicos = [
+        {
+          id: 1,
+          nome: "Banho",
+          foto: "img/banho.png",
+          descricao: descricaoPadrao,
+          preco: "39,90"
+        },
+        {
+          id: 2,
+          nome: "Tosa",
+          foto: "img/tosa.png",
+          descricao: descricaoPadrao,
+          preco: "29,90"
+        },
+        {
+          id: 3,
+          nome: "Banho + Tosa",
+          foto: "img/banho_tosa.png",
+          descricao: descricaoPadrao,
+          preco: "59,90"
+        },
+        {
+          id: 4,
+          nome: "Hospedagem",
+          foto: "img/hospedagem.png",
+          descricao: descricaoPadrao,
+          preco: "69,00"
+        }
+      ].sort(function() {
+        return 0.4 - Math.random();
+      });
+      function preencheConteudo() {
+        const servicosContainer = document.getElementById("servicos");
+        servicos.forEach(servico => {
+          let alerta = `alertPreco("${servico.nome}", "${servico.preco}")`;
+          var estrutura = estruturaHTML
+            .replace("#ACAO#", alerta)
+            .replace("#NOME#", servico.nome)
+            .replace("#FOTO#", servico.foto)
+            .replace("#DESCRICAO#", servico.descricao);
+          servicosContainer.innerHTML += estrutura;
+        });
+      }
+      preencheConteudo();
+      function alertPreco(nome, preco) {
+        alert(nome + " | Preço: R$" + preco);
+      }
+    </script>
+  </body>
+</html>
